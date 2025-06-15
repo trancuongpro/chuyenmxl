@@ -1,0 +1,163 @@
+/* Reset mặc định cho tương thích đa thiết bị */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, -webkit-system-font, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    padding: 15px;
+    background-color: #1e1e1e; /* Dark theme: nền đen xám */
+    color: #e0e0e0; /* Chữ sáng */
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background: #2d2d2d; /* Nền container xám đậm */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 1000px; /* Tối ưu cho desktop */
+}
+
+/* Responsive cho di động */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+        margin: 10px;
+    }
+}
+
+h1 {
+    text-align: center;
+    font-size: 1.8rem;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+p {
+    text-align: center;
+    font-size: 1rem;
+    color: #b0b0b0;
+    margin-bottom: 15px;
+}
+
+#fileInput {
+    display: block;
+    margin: 20px auto;
+    padding: 12px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    background-color: #333;
+    color: #e0e0e0;
+    width: 100%;
+    max-width: 500px;
+    font-size: 1rem;
+}
+
+/* Tăng kích thước input trên di động cho dễ chạm */
+@media (max-width: 768px) {
+    #fileInput {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Khu vực hiển thị bản nhạc */
+#sheetMusicContainer {
+    margin-top: 20px;
+    border: 1px solid #444;
+    background-color: #fff; /* Giữ nền trắng cho SVG của OSMD */
+    min-height: 150px;
+    overflow-x: auto;
+    border-radius: 5px;
+}
+
+/* Đảm bảo cuộn mượt trên di động */
+@supports (-webkit-overflow-scrolling: touch) {
+    #sheetMusicContainer {
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+/* Thông báo lỗi */
+.error-message {
+    color: #ff6b6b;
+    background-color: #4a1e1e;
+    border: 1px solid #ff6b6b;
+    padding: 10px;
+    margin-top: 15px;
+    border-radius: 5px;
+    text-align: center;
+    display: none;
+    font-size: 0.9rem;
+}
+
+/* Khu vực tải về */
+.download-container {
+    display: none;
+    margin: 15px 0;
+    text-align: center;
+}
+
+.download-options {
+    padding: 10px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    display: inline-block;
+    background-color: #333;
+}
+
+.download-options span {
+    color: #e0e0e0;
+    font-size: 0.9rem;
+}
+
+.download-options label {
+    margin: 0 10px;
+    color: #b0b0b0;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.download-options input[type="radio"] {
+    accent-color: #4CAF50; /* Màu radio button nổi bật */
+}
+
+/* Nút tải về */
+#downloadBtn {
+    margin: 15px auto 0;
+    padding: 12px 30px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    width: 100%;
+    max-width: 300px;
+}
+
+#downloadBtn:hover {
+    background-color: #45a049;
+}
+
+/* Tăng kích thước nút trên di động */
+@media (max-width: 768px) {
+    #downloadBtn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Ẩn textarea */
+#output {
+    display: none;
+}

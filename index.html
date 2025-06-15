@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Công Cụ Chuyển Đổi Sheet</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="jszip.min.js"></script>
+    <script src="opensheetmusicdisplay.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Chuyển Sheet Sang MusicXML</h1>
+        <p>Chọn Khung Dưới Tải File MXL Lên Và Xem Sheet</p>
+        <input type="file" id="fileInput" accept=".mxl,.musicxml,.xml">
+        
+        <div id="errorDisplay" class="error-message"></div>
+        
+        <div id="downloadContainer" class="download-container">
+            <div class="download-options">
+                <span>Chọn Định Dạng Tải Về:</span>
+                <label><input type="radio" name="extension" value=".musicxml" checked> .musicxml</label>
+                <label><input type="radio" name="extension" value=".xml"> .xml</label>
+            </div>
+            <button id="downloadBtn">Chọn Để Tải Về</button>
+        </div>
+        
+        <div id="sheetMusicContainer"></div>
+        
+        <textarea id="output"></textarea>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
